@@ -23,7 +23,7 @@ vector<Point> linearate(Point p1, Point p2) {
   }
 
   if (dy == 0) {
-    for (int x = min(p1.x, p2.x); x < max(p1.x, p2.x); +x) {
+    for (int x = min(p1.x, p2.x); x < max(p1.x, p2.x); ++x) {
       result.emplace_back(x, p1.y);
     }
     return result;
@@ -33,7 +33,7 @@ vector<Point> linearate(Point p1, Point p2) {
   const double offset = p1.y - slope * p1.x;
 
   if (abs(dx) > abs(dy)) {
-    for (int x = min(p1.x, p2.x); x < max(p1.x, p2.x); +x) {
+    for (int x = min(p1.x, p2.x); x < max(p1.x, p2.x); ++x) {
       result.emplace_back(x, slope * x + offset);
     }
   } else {
